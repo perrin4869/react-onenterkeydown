@@ -43,6 +43,7 @@ SystemJS.config({
     "process": "github:jspm/nodelibs-process@0.2.0-alpha",
     "react": "npm:react@15.0.0",
     "react-dom": "npm:react-dom@15.0.0",
+    "react-onenterkeydown": "npm:react-onenterkeydown@0.0.1",
     "stream": "github:jspm/nodelibs-stream@0.2.0-alpha",
     "string_decoder": "github:jspm/nodelibs-string_decoder@0.2.0-alpha",
     "tty": "github:jspm/nodelibs-tty@0.2.0-alpha",
@@ -51,6 +52,12 @@ SystemJS.config({
     "zlib": "github:jspm/nodelibs-zlib@0.2.0-alpha"
   },
   packages: {
+    "npm:react-onenterkeydown@0.0.1": {
+      "map": {
+        "hoist-non-react-statics": "npm:hoist-non-react-statics@1.0.5",
+        "react-display-name": "npm:react-display-name@0.2.0"
+      }
+    },
     "github:jspm/nodelibs-domain@0.2.0-alpha": {
       "map": {
         "domain-browserify": "npm:domain-browser@1.1.7"

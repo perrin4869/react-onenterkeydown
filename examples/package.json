@@ -13,7 +13,8 @@
   "jspm": {
     "name": "react-onenterkeydown-demo",
     "dependencies": {
-      "react-dom": "npm:react-dom@^15.0.0"
+      "react-dom": "npm:react-dom@^15.0.0",
+      "react-onenterkeydown": "npm:react-onenterkeydown@^0.0.1"
     },
     "devDependencies": {
       "babel-plugin-transform-class-properties": "npm:babel-plugin-transform-class-properties@^6.6.0",

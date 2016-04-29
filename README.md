@@ -5,7 +5,7 @@
 [![Dependency Status][dependency-status-badge]][dependency-status]
 [![devDependency Status][dev-dependency-status-badge]][dev-dependency-status]
 
-> Keep your component, such as message boxes, scrolled down
+> React to enter key down events higher order component
 
 ## Live demo
 

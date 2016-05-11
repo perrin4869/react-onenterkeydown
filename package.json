@@ -4,7 +4,7 @@
   "description": "React higher order component for adding onEnterKeyDown to input components",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register",
+    "test": "gulp test",
     "cover": "babel-node node_modules/isparta/bin/isparta cover --report text --report html node_modules/mocha/bin/_mocha",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls && rm -rf ./coverage",
     "lint": "gulp lint",
@@ -28,6 +28,7 @@
   "homepage": "https://github.com/perrin4869/react-onenterkeydown#readme",
   "devDependencies": {
     "babel-cli": "^6.8.0",
+    "babel-core": "^6.8.0",
     "babel-eslint": "^6.0.4",
     "babel-plugin-transform-class-properties": "^6.8.0",
     "babel-plugin-transform-object-rest-spread": "^6.8.0",
@@ -43,6 +44,8 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-eslint": "^2.0.0",
+    "gulp-mocha": "^2.2.0",
+    "gulp-util": "^3.0.7",
     "isparta": "^4.0.0",
     "jsdom": "^9.0.0",
     "mocha": "^2.4.5",

@@ -36,6 +36,8 @@ const () => (
 )
 ```
 
+If `onKeyDown` is passed in addition to `onEnterKeyDown`, it will execute as well after the enter event.
+
 ## Props
 
 ### onEnterKeyDown
@@ -46,7 +48,6 @@ Defines an event handler for when the enter key is pressed on the wrapped compon
 
 ## TODO
 
-* Multiple onKeyDown
 * Improve examples
 * Improve documentation with tables, etc
 

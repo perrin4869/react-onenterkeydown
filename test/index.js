@@ -55,4 +55,42 @@ describe('react-onenterkeydown', () => {
 
     cb.called.should.equal(false);
   });
+
+  it('should execute onKeyDown and onEnterKeyDown', () => {
+    const onEnterKeyDown = sinon.spy();
+    const onKeyDown = sinon.spy();
+
+    const rendered = renderIntoDocument(
+      <EnhancedInput onKeyDown={onKeyDown} onEnterKeyDown={onEnterKeyDown} />
+    );
+    const input = findRenderedDOMComponentWithTag(rendered, 'input');
+
+    Simulate.keyDown(input, {
+      key: 'Enter',
+      keyCode: 13,
+      which: 13,
+    });
+
+    onKeyDown.calledOnce.should.equal(true);
+    onEnterKeyDown.calledOnce.should.equal(true);
+  });
+
+  it('should execute onKeyDown but not onEnterKeyDown', () => {
+    const onEnterKeyDown = sinon.spy();
+    const onKeyDown = sinon.spy();
+
+    const rendered = renderIntoDocument(
+      <EnhancedInput onKeyDown={onKeyDown} onEnterKeyDown={onEnterKeyDown} />
+    );
+    const input = findRenderedDOMComponentWithTag(rendered, 'input');
+
+    Simulate.keyDown(input, {
+      key: 'a',
+      keyCode: 65,
+      which: 65,
+    });
+
+    onKeyDown.calledOnce.should.equal(true);
+    onEnterKeyDown.called.should.equal(false);
+  });
 });

@@ -7,12 +7,5 @@
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
     },
-  },
-
-  "rules": {
-    "max-len": ["error", 150],
-    "new-cap": [2, {
-      "capIsNewExceptions": ["Velocity"]
-    }]
   }
 }

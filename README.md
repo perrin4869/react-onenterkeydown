@@ -60,7 +60,7 @@ See the [LICENSE](LICENSE.md) file for license rights and limitations (MIT).
 [npm-badge]: https://img.shields.io/npm/v/react-onenterkeydown.svg?style=flat-square
 [npm]: https://www.npmjs.org/package/react-onenterkeydown
 
-[coveralls-badge]: https://img.shields.io/coveralls/perrin4869/react-onenterkeydown/master.svg
+[coveralls-badge]: https://img.shields.io/coveralls/perrin4869/react-onenterkeydown/master.svg?style=flat-square
 [coveralls]: https://coveralls.io/r/perrin4869/react-onenterkeydown
 
 [dependency-status-badge]: https://david-dm.org/perrin4869/react-onenterkeydown.svg?style=flat-square

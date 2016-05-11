@@ -22,7 +22,7 @@ describe('react-onenterkeydown', () => {
     container.childNodes[0].tagName.should.equal('INPUT');
   });
 
-  it('should focus on input', () => {
+  it('should execute callback on enter keydown event', () => {
     const cb = sinon.spy();
 
     const rendered = renderIntoDocument(<EnhancedInput onEnterKeyDown={cb} />);
@@ -39,5 +39,20 @@ describe('react-onenterkeydown', () => {
     args.length.should.equal(1);
     const event = args[0];
     event.nativeEvent.target.should.equal(ReactDOM.findDOMNode(input));
+  });
+
+  it('should not execute callback on a keydown event', () => {
+    const cb = sinon.spy();
+
+    const rendered = renderIntoDocument(<EnhancedInput onEnterKeyDown={cb} />);
+    const input = findRenderedDOMComponentWithTag(rendered, 'input');
+
+    Simulate.keyDown(input, {
+      key: 'a',
+      keyCode: 65,
+      which: 65,
+    });
+
+    cb.called.should.equal(false);
   });
 });

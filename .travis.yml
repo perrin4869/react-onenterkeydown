@@ -11,4 +11,6 @@ deploy:
     tags: true
 before_script:
   - npm install -g gulp
+after_script:
+  - npm run coveralls
 script: gulp

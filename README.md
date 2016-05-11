@@ -49,7 +49,6 @@ Defines an event handler for when the enter key is pressed on the wrapped compon
 ## TODO
 
 * Improve examples
-* Improve documentation with tables, etc
 
 ## License
 

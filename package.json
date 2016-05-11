@@ -1,6 +1,6 @@
 {
   "name": "react-onenterkeydown",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "React higher order component for adding onEnterKeyDown to input components",
   "main": "lib/index.js",
   "scripts": {

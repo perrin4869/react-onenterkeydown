@@ -16,7 +16,6 @@ gulp.task('lint', () => (
 gulp.task('test', ['lint'], () => (
   gulp.src('test')
   .pipe(mocha({
-    reporter: 'spec',
     compilers: {
       js: compiler,
     },

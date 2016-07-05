@@ -24,7 +24,8 @@ export default Input => {
     }
 
     render() {
-      return createElement(Input, { ...this.props, onKeyDown: this.inputKeyDown });
+      const { onEnterKeyDown, ...props } = this.props; // eslint-disable-line no-unused-vars
+      return createElement(Input, { ...props, onKeyDown: this.inputKeyDown });
     }
   }
 

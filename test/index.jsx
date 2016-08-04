@@ -1,6 +1,6 @@
 import sinon from 'sinon';
 import jsdom from 'mocha-jsdom';
-import chai from 'chai';
+import { expect } from 'chai';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -12,8 +12,6 @@ import {
 
 import onEnter from '../src';
 
-chai.should();
-
 describe('react-onenterkeydown', () => {
   jsdom();
 
@@ -22,8 +20,8 @@ describe('react-onenterkeydown', () => {
   it('should render single input', () => {
     const container = document.createElement('div');
     ReactDOM.render(<EnhancedInput />, container);
-    container.childNodes.length.should.equal(1);
-    container.childNodes[0].tagName.should.equal('INPUT');
+    expect(container.childNodes).to.have.lengthOf(1);
+    expect(container.childNodes[0].tagName).to.equal('INPUT');
   });
 
   it('should execute callback on enter keydown event', () => {
@@ -38,11 +36,11 @@ describe('react-onenterkeydown', () => {
       which: 13,
     });
 
-    cb.calledOnce.should.equal(true);
+    expect(cb.calledOnce).to.equal(true);
     const args = cb.args[0];
-    args.length.should.equal(1);
+    expect(args.length).to.equal(1);
     const event = args[0];
-    event.nativeEvent.target.should.equal(input);
+    expect(event.nativeEvent.target).to.equal(input);
   });
 
   it('should not execute callback on a keydown event', () => {
@@ -57,7 +55,7 @@ describe('react-onenterkeydown', () => {
       which: 65,
     });
 
-    cb.called.should.equal(false);
+    expect(cb.called).to.equal(false);
   });
 
   it('should execute onKeyDown and onEnterKeyDown', () => {
@@ -75,8 +73,8 @@ describe('react-onenterkeydown', () => {
       which: 13,
     });
 
-    onKeyDown.calledOnce.should.equal(true);
-    onEnterKeyDown.calledOnce.should.equal(true);
+    expect(onKeyDown.calledOnce).to.equal(true);
+    expect(onEnterKeyDown.calledOnce).to.equal(true);
   });
 
   it('should execute onKeyDown but not onEnterKeyDown', () => {
@@ -94,7 +92,7 @@ describe('react-onenterkeydown', () => {
       which: 65,
     });
 
-    onKeyDown.calledOnce.should.equal(true);
-    onEnterKeyDown.called.should.equal(false);
+    expect(onKeyDown.calledOnce).to.equal(true);
+    expect(onEnterKeyDown.called).to.equal(false);
   });
 });

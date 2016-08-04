@@ -1,10 +1,14 @@
 import sinon from 'sinon';
 import jsdom from 'mocha-jsdom';
-import chai, { expect } from 'chai';
+import chai from 'chai';
 
-import React, { SyntheticEvent } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import { Simulate, renderIntoDocument, findRenderedDOMComponentWithTag } from 'react-addons-test-utils';
+import {
+  Simulate,
+  renderIntoDocument,
+  findRenderedDOMComponentWithTag,
+} from 'react-addons-test-utils';
 
 import onEnter from '../src';
 
@@ -38,7 +42,7 @@ describe('react-onenterkeydown', () => {
     const args = cb.args[0];
     args.length.should.equal(1);
     const event = args[0];
-    event.nativeEvent.target.should.equal(ReactDOM.findDOMNode(input));
+    event.nativeEvent.target.should.equal(input);
   });
 
   it('should not execute callback on a keydown event', () => {

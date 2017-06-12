@@ -1,4 +1,5 @@
-import { PropTypes, Component, createElement } from 'react';
+import { Component, createElement } from 'react';
+import PropTypes from 'prop-types';
 import hoistStatics from 'hoist-non-react-statics';
 import getDisplayName from 'react-display-name';
 

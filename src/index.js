@@ -2,11 +2,16 @@ import { PropTypes, Component, createElement } from 'react';
 import hoistStatics from 'hoist-non-react-statics';
 import getDisplayName from 'react-display-name';
 
-export default Input => {
+export default (Input) => {
   class OnEnter extends Component {
     static propTypes = {
       onKeyDown: PropTypes.func,
       onEnterKeyDown: PropTypes.func,
+    }
+
+    static defaultProps = {
+      onKeyDown: null,
+      onEnterKeyDown: null,
     }
 
     static displayName = `OnEnter(${getDisplayName(Input)})`

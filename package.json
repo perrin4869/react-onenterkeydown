@@ -9,7 +9,7 @@
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls && rm -rf ./coverage",
     "lint": "gulp lint",
     "build": "gulp build",
-    "prepublish": "npm run build"
+    "prepare": "npm run build"
   },
   "files": [
     "lib"

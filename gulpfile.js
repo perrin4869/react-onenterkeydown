@@ -18,6 +18,7 @@ gulp.task('test', ['lint'], () => (
   .pipe(mocha({
     compilers: {
       js: compiler,
+      jsx: compiler,
     },
   }))
   .on('error', util.log)

@@ -1,5 +1,4 @@
 import sinon from 'sinon';
-import jsdom from 'mocha-jsdom';
 import { expect } from 'chai';
 
 import React from 'react';
@@ -13,8 +12,6 @@ import {
 import onEnter from '../src';
 
 describe('react-onenterkeydown', () => {
-  jsdom();
-
   const EnhancedInput = onEnter('input');
 
   it('should render single input', () => {

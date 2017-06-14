@@ -3,7 +3,6 @@ const util = require('gulp-util');
 const babel = require('gulp-babel');
 const mocha = require('gulp-mocha');
 const eslint = require('gulp-eslint');
-const compiler = require('babel-register');
 
 const src = 'src/*.js';
 
@@ -14,13 +13,8 @@ gulp.task('lint', () => (
 ));
 
 gulp.task('test', ['lint'], () => (
-  gulp.src('test')
-  .pipe(mocha({
-    compilers: {
-      js: compiler,
-      jsx: compiler,
-    },
-  }))
+  gulp.src('test/index.jsx')
+  .pipe(mocha()) // gulp-mocha@4 now spawns a new mocha proccess that reads mocha.opts
   .on('error', util.log)
 ));
 

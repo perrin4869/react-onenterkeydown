@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "gulp test",
-    "cover": "NODE_ENV=test nyc npm test",
+    "cover": "nyc npm test",
     "coveralls": "npm run cover && nyc report --reporter=text-lcov | coveralls",
     "lint": "gulp lint",
     "build": "gulp build",
@@ -39,6 +39,7 @@
     "babel-register": "^6.24.1",
     "chai": "^4.0.2",
     "coveralls": "^2.13.1",
+    "env-test": "^1.0.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.1",
     "eslint-plugin-import": "^2.3.0",

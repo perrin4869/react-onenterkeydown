@@ -60,7 +60,7 @@ describe('react-onenterkeydown', () => {
     const onKeyDown = sinon.spy();
 
     const rendered = renderIntoDocument(
-      <EnhancedInput onKeyDown={onKeyDown} onEnterKeyDown={onEnterKeyDown} />
+      <EnhancedInput onKeyDown={onKeyDown} onEnterKeyDown={onEnterKeyDown} />,
     );
     const input = findRenderedDOMComponentWithTag(rendered, 'input');
 
@@ -79,7 +79,7 @@ describe('react-onenterkeydown', () => {
     const onKeyDown = sinon.spy();
 
     const rendered = renderIntoDocument(
-      <EnhancedInput onKeyDown={onKeyDown} onEnterKeyDown={onEnterKeyDown} />
+      <EnhancedInput onKeyDown={onKeyDown} onEnterKeyDown={onEnterKeyDown} />,
     );
     const input = findRenderedDOMComponentWithTag(rendered, 'input');
 

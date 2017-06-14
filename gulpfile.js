@@ -7,7 +7,7 @@ const eslint = require('gulp-eslint');
 const src = 'src/*.js';
 
 gulp.task('lint', () => (
-  gulp.src(src)
+  gulp.src([src, 'test/*.jsx?'])
   .pipe(eslint())
   .pipe(eslint.format())
 ));

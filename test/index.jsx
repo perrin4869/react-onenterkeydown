@@ -1,6 +1,3 @@
-import sinon from 'sinon';
-import { expect } from 'chai';
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {
@@ -8,6 +5,9 @@ import {
   renderIntoDocument,
   findRenderedDOMComponentWithTag,
 } from 'react-dom/test-utils';
+
+import sinon from 'sinon';
+import { expect } from 'chai';
 
 import onEnter from '../src';
 

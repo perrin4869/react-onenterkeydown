@@ -1,6 +1,6 @@
 -R spec
 --ui bdd
---compilers js:babel-register
+--require babel-register
 --require env-test
 --require raf/polyfill
 --require jsdom-global/register

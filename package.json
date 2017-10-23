@@ -64,9 +64,6 @@
     "prop-types": "^15.6.0",
     "react-display-name": "^0.2.3"
   },
-  "jspm": {
-    "registry": "npm"
-  },
   "nyc": {
     "extension": [
       "jsx"

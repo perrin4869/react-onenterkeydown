@@ -8,7 +8,7 @@ import {
 import sinon from 'sinon';
 import { expect } from 'chai';
 
-import onEnter from '..';
+import onEnter from '../src';
 
 describe('react-onenterkeydown', () => {
   const EnhancedInput = onEnter('input');

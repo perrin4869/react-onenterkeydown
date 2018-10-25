@@ -1,6 +1,6 @@
 {
   "name": "react-onenterkeydown",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "React higher order component for adding onEnterKeyDown to input components",
   "main": "dist/react-onenterkeydown.cjs.js",
   "module": "dist/react-onenterkeydown.esm.js",

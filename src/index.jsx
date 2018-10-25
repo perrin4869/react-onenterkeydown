@@ -53,7 +53,7 @@ export default (Input) => {
   function forwardToOnEnter(props, ref) {
     return <HoistedOnEnter {...props} forwardedRef={ref} />;
   }
-  forwardToOnEnter.displayName = `ForwardRef(${HoistedOnEnter.displayName})`;
+  forwardToOnEnter.displayName = HoistedOnEnter.displayName;
 
   return forwardRef(forwardToOnEnter);
 };

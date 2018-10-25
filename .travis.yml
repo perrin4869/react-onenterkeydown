@@ -1,8 +1,8 @@
 language: node_js
 node_js:
+- '10'
 - '8'
 - '6'
-# - '4' jsdom doesn't support 4 anymore
 deploy:
   api_key:
     secure: izGDDGd/4PNBRofrQb9GQUit6wukWhqm+pOMR+iSpgn8WgANCz10saNvTnxBkFepJJZaZhF9fWfk8w+nJ/Jt2zBjGbh4EZdGdfS67KmBQ9GuVdzCDbTkP7zauBYxD8U7l14ziwrIkmUxUtTJ1Khbdp/Tx9KA21Rio7WW2HHXNg3V5lLzvgn8kdGI28kfbP1Xgz/7mpLvIgdcT14ddeg+wjU4ocMseFgs1+NnvYBwDXt484TI0HYiV6cPyktEgSMJPJ8iZzaBeu9jl3rbDFRsoN59U76h7EEnpqTjHnXYUOVvWlRpCJzfV6ouE1Jz0qp91TsXNsIppZKjxYnFYLoxPPOtM2M866jP62i3rQfOgJwfF/v5EPX4MCzrQLj8ITHlyngYVu0YdTR+g7sfWv67Zh36NWxXB4QPiD5mWKw4a40XXWW3zd1WHEeg9t7f2LBhgMMFCkgPDE6GBUseNftMSW689xaiSW9uTI/q+3PbvhqTgrsE3djX74aShz+ChQ1a4ASVOozespjgQfAlLs+O1XFiafg0/uwVK1BgdYfJ24jI9ORKhi73+ORSNW7SeCgt2CKLztksjpUnMT6HKdr62DDA2cwgSb0z/DOTeRQdv59hxOtrfteqDjkM1RuTe0ymefuILa2qyI/ToVkZ+wSF+Yc8SveVNCQWq1R8zLt68wM=

@@ -11,7 +11,7 @@
     "cover": "nyc npm test",
     "coveralls": "npm run cover && nyc report --reporter=text-lcov | coveralls",
     "build": "rollup -c",
-    "prepare": "npm run test && npm run build"
+    "prepare": "npm run build && npm run test"
   },
   "files": [
     "dist"

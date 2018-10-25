@@ -3,12 +3,11 @@ const targets = env === 'test' ? { node: 'current' } : null;
 
 module.exports = {
   presets: [
-    ['env', targets ? { targets } : {}],
-    'react',
+    ['@babel/env', targets ? { targets } : {}],
+    '@babel/react',
   ],
   plugins: [
-    'transform-object-rest-spread',
-    'transform-class-properties',
+    '@babel/proposal-class-properties',
     ...(env === 'test' ? ['istanbul'] : []),
   ],
 };

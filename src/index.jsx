@@ -49,5 +49,11 @@ export default (Input) => {
   }
 
   const HoistedOnEnter = hoistStatics(OnEnter, Input);
-  return forwardRef((props, ref) => <HoistedOnEnter {...props} forwardedRef={ref} />);
+
+  function forwardToOnEnter(props, ref) {
+    return <HoistedOnEnter {...props} forwardedRef={ref} />;
+  }
+  forwardToOnEnter.displayName = `ForwardRef(${HoistedOnEnter.displayName})`;
+
+  return forwardRef(forwardToOnEnter);
 };

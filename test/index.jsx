@@ -1,4 +1,4 @@
-import React, { createRef } from 'react';
+import React, { StrictMode, createRef } from 'react';
 import ReactDOM from 'react-dom';
 import {
   Simulate,
@@ -13,6 +13,17 @@ import onEnter from '../src';
 describe('react-onenterkeydown', () => {
   const EnhancedInput = onEnter('input');
 
+  const getInput = (props) => {
+    const ref = createRef();
+    renderIntoDocument(
+      <StrictMode>
+        <EnhancedInput {...props} ref={ref} />
+      </StrictMode>,
+    );
+
+    return ref.current;
+  };
+
   it('should render single input', () => {
     const container = document.createElement('div');
     ReactDOM.render(<EnhancedInput />, container);
@@ -22,10 +33,7 @@ describe('react-onenterkeydown', () => {
 
   it('should execute callback on enter keydown event', () => {
     const cb = sinon.spy();
-
-    const ref = createRef();
-    renderIntoDocument(<EnhancedInput ref={ref} onEnterKeyDown={cb} />);
-    const { current: input } = ref;
+    const input = getInput({ onEnterKeyDown: cb });
 
     Simulate.keyDown(input, {
       key: 'Enter',
@@ -42,10 +50,7 @@ describe('react-onenterkeydown', () => {
 
   it('should not execute callback on a keydown event', () => {
     const cb = sinon.spy();
-
-    const ref = createRef();
-    renderIntoDocument(<EnhancedInput ref={ref} onEnterKeyDown={cb} />);
-    const { current: input } = ref;
+    const input = getInput({ onEnterKeyDown: cb });
 
     Simulate.keyDown(input, {
       key: 'a',
@@ -59,14 +64,7 @@ describe('react-onenterkeydown', () => {
   it('should execute onKeyDown and onEnterKeyDown', () => {
     const onEnterKeyDown = sinon.spy();
     const onKeyDown = sinon.spy();
-
-    const ref = createRef();
-    renderIntoDocument(<EnhancedInput
-      ref={ref}
-      onKeyDown={onKeyDown}
-      onEnterKeyDown={onEnterKeyDown}
-    />);
-    const { current: input } = ref;
+    const input = getInput({ onKeyDown, onEnterKeyDown });
 
     Simulate.keyDown(input, {
       key: 'Enter',
@@ -81,16 +79,7 @@ describe('react-onenterkeydown', () => {
   it('should execute onKeyDown but not onEnterKeyDown', () => {
     const onEnterKeyDown = sinon.spy();
     const onKeyDown = sinon.spy();
-
-    const ref = createRef();
-    renderIntoDocument((
-      <EnhancedInput
-        ref={ref}
-        onKeyDown={onKeyDown}
-        onEnterKeyDown={onEnterKeyDown}
-      />
-    ));
-    const { current: input } = ref;
+    const input = getInput({ onKeyDown, onEnterKeyDown });
 
     Simulate.keyDown(input, {
       key: 'a',

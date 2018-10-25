@@ -1,4 +1,4 @@
-import { Component, createElement } from 'react';
+import React, { Component, forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import hoistStatics from 'hoist-non-react-statics';
 import getDisplayName from 'react-display-name';
@@ -6,11 +6,13 @@ import getDisplayName from 'react-display-name';
 export default (Input) => {
   class OnEnter extends Component {
     static propTypes = {
+      forwardedRef: PropTypes.object, // eslint-disable-line react/forbid-prop-types
       onKeyDown: PropTypes.func,
       onEnterKeyDown: PropTypes.func,
     }
 
     static defaultProps = {
+      forwardedRef: null,
       onKeyDown: null,
       onEnterKeyDown: null,
     }
@@ -30,10 +32,22 @@ export default (Input) => {
     }
 
     render() {
-      const { onEnterKeyDown, ...props } = this.props; // eslint-disable-line no-unused-vars
-      return createElement(Input, { ...props, onKeyDown: this.inputKeyDown });
+      const {
+        forwardedRef,
+        onEnterKeyDown,
+        ...props
+      } = this.props;
+
+      return (
+        <Input
+          {...props}
+          ref={forwardedRef}
+          onKeyDown={this.inputKeyDown}
+        />
+      );
     }
   }
 
-  return hoistStatics(OnEnter, Input);
+  const HoistedOnEnter = hoistStatics(OnEnter, Input);
+  return forwardRef((props, ref) => <HoistedOnEnter {...props} forwardedRef={ref} />);
 };

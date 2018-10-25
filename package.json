@@ -52,12 +52,12 @@
     "mocha": "^5.2.0",
     "nyc": "^13.1.0",
     "raf": "^3.4.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
     "sinon": "^7.0.0"
   },
   "peerDependencies": {
-    "react": "^0.14.0 || >=15.0.0"
+    "react": "^>=16.3.0"
   },
   "dependencies": {
     "hoist-non-react-statics": "^3.0.1",

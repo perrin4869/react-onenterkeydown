@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { createRef } from 'react';
 import ReactDOM from 'react-dom';
 import {
   Simulate,
   renderIntoDocument,
-  findRenderedDOMComponentWithTag,
 } from 'react-dom/test-utils';
 
 import sinon from 'sinon';
@@ -24,8 +23,9 @@ describe('react-onenterkeydown', () => {
   it('should execute callback on enter keydown event', () => {
     const cb = sinon.spy();
 
-    const rendered = renderIntoDocument(<EnhancedInput onEnterKeyDown={cb} />);
-    const input = findRenderedDOMComponentWithTag(rendered, 'input');
+    const ref = createRef();
+    renderIntoDocument(<EnhancedInput ref={ref} onEnterKeyDown={cb} />);
+    const { current: input } = ref;
 
     Simulate.keyDown(input, {
       key: 'Enter',
@@ -43,8 +43,9 @@ describe('react-onenterkeydown', () => {
   it('should not execute callback on a keydown event', () => {
     const cb = sinon.spy();
 
-    const rendered = renderIntoDocument(<EnhancedInput onEnterKeyDown={cb} />);
-    const input = findRenderedDOMComponentWithTag(rendered, 'input');
+    const ref = createRef();
+    renderIntoDocument(<EnhancedInput ref={ref} onEnterKeyDown={cb} />);
+    const { current: input } = ref;
 
     Simulate.keyDown(input, {
       key: 'a',
@@ -59,10 +60,13 @@ describe('react-onenterkeydown', () => {
     const onEnterKeyDown = sinon.spy();
     const onKeyDown = sinon.spy();
 
-    const rendered = renderIntoDocument((
-      <EnhancedInput onKeyDown={onKeyDown} onEnterKeyDown={onEnterKeyDown} />
-    ));
-    const input = findRenderedDOMComponentWithTag(rendered, 'input');
+    const ref = createRef();
+    renderIntoDocument(<EnhancedInput
+      ref={ref}
+      onKeyDown={onKeyDown}
+      onEnterKeyDown={onEnterKeyDown}
+    />);
+    const { current: input } = ref;
 
     Simulate.keyDown(input, {
       key: 'Enter',
@@ -78,10 +82,15 @@ describe('react-onenterkeydown', () => {
     const onEnterKeyDown = sinon.spy();
     const onKeyDown = sinon.spy();
 
-    const rendered = renderIntoDocument((
-      <EnhancedInput onKeyDown={onKeyDown} onEnterKeyDown={onEnterKeyDown} />
+    const ref = createRef();
+    renderIntoDocument((
+      <EnhancedInput
+        ref={ref}
+        onKeyDown={onKeyDown}
+        onEnterKeyDown={onEnterKeyDown}
+      />
     ));
-    const input = findRenderedDOMComponentWithTag(rendered, 'input');
+    const { current: input } = ref;
 
     Simulate.keyDown(input, {
       key: 'a',

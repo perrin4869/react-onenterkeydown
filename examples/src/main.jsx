@@ -1,8 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import InputOnEnterDemo from './demo.jsx';
+import { render } from 'react-dom';
+import InputOnEnterDemo from './demo';
 
-ReactDOM.render(
+render(
   <InputOnEnterDemo />,
-  document.getElementById('demo')
+  document.getElementById('demo'),
 );

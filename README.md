@@ -18,6 +18,16 @@ You can see the simplest demo here: [Live demo](https://perrin4869.github.io/rea
 $ npm install --save react-onenterkeydown
 ```
 
+## Examples
+
+Run examples:
+
+```javascript
+cd examples
+npm install
+npm start
+```
+
 ## Usage
 
 `react-onenterkeydown` adds an `onEnterKeyDown` prop to a component with supports `onKeyDown` property, such as the html `input` component:
@@ -48,7 +58,7 @@ Defines an event handler for when the enter key is pressed on the wrapped compon
 
 ## TODO
 
-* Improve examples
+* Beter design on example
 
 ## License
 

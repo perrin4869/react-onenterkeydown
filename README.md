@@ -8,6 +8,21 @@
 
 > React to enter key down events higher order component
 
+## DEPRECATED
+
+This was originally used in a personal project along with other HoCs. However, with the realease of hooks, HoCs have become much less useful and this one in particular is very redundant and pointless to maintain. Please replace by a higher order function as follows:
+
+```javascript
+const ifEnter = func => e => {
+  if (e.which === 13) func(e);
+}
+
+import { ifElse, propEq, always } from 'ramda';
+
+// or even more concise, with something like ramda
+const ifEnter = func => ifElse(propEq('which', 13), func, always(null));
+```
+
 ## Live demo
 
 You can see the simplest demo here: [Live demo](https://codesandbox.io/s/x32wv59x2z)
